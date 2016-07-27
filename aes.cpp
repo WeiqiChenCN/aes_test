@@ -182,9 +182,6 @@ int main( int argc, char *argv[] ){
 #if 1
     std::string plan="0001000101a198afda78173486153566";
     std::string key ="00012001710198aeda79171460153594";
-    std::string encrypt;
-    std::string decrypt;
-
 
     std::vector<unsigned char> encrypt_vec(16);
     std::vector<unsigned char> decrypt_vec(16);
@@ -203,10 +200,6 @@ int main( int argc, char *argv[] ){
 
     AES_set_decrypt_key( CONST_UCHAR key.data(), 128, &aes_enc_ctx );
     AES_decrypt( CONST_UCHAR encrypt_vec.data(), UCHAR decrypt_vec.data(), &aes_enc_ctx );
-
-    encrypt = to_hex_string( encrypt_vec );
-    decrypt = to_hex_string( decrypt_vec );
-
 
     std::cout << "key\t\t:"  <<  key     << "\n";
 
